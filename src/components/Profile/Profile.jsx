@@ -2,6 +2,12 @@ import s from './profile.module.css';
 
 export default function Profile(props) {
   const { username, tag, location, avatar, stats } = props;
+
+  function profileStats(stats) {
+    for (const key in stats) {
+    }
+  }
+
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -11,11 +17,12 @@ export default function Profile(props) {
         <p className={s.location}>{location}</p>
       </div>
       <ul className={s.stats}>
-        {Object.keys(stats).map((key, value) => {
+        {profileStats(stats)}
+        {Object.entries(stats).map(entry => {
           return (
-            <li key={key} className={`${s.noLeftBorder} ${s.statsItem}`}>
-              <span className={s.label}>{key}</span>
-              <span className={s.quantity}>{value}</span>
+            <li key={entry[0]} className={`${s.noLeftBorder} ${s.statsItem}`}>
+              <span className={s.label}>{entry[0]}</span>
+              <span className={s.quantity}>{entry[1]}</span>
             </li>
           );
         })}
