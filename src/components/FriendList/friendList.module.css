@@ -1,0 +1,20 @@
+.friend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.onlineBlock {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.friendListItem {
+  border: 2px solid #646464;
+  padding: 12px 36px;
+  border-radius: 5px;
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+}
