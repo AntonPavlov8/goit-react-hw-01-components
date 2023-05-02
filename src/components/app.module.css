@@ -1,0 +1,12 @@
+.appWrapper {
+  width: 100vh;
+  display: grid;
+  grid-template-columns: [nav-bar] 1fr [main] 5fr;
+}
+.main {
+  grid-area: main;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
