@@ -1,0 +1,21 @@
+.table {
+  text-align: center;
+  max-width: 800px;
+  width: 80vh;
+  text-transform: capitalize;
+}
+
+.tableHeaderText {
+  background-color: #bde0ff;
+}
+
+table,
+th,
+td {
+  padding: 4px 0;
+  border: 1px solid #90909040;
+  border-collapse: collapse;
+}
+tr:nth-child(even) {
+  background-color: aliceblue;
+}

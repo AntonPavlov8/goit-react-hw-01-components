@@ -1,12 +1,15 @@
+import PropTypes from 'prop-types';
+
 import s from './statistics.module.css';
 
 export const Statistics = props => {
+  const { stats, title } = props;
   return (
     <section className={s.statistics}>
-      {props.title ? <h2 className={s.header}>{props.title}</h2> : ''}
+      {title ? <h2 className={s.header}>{props.title}</h2> : ''}
 
       <ul className={s.statsBlock}>
-        {props.stats.map(statItem => {
+        {stats.map(statItem => {
           return (
             <li
               key={statItem.id}
@@ -25,4 +28,8 @@ export const Statistics = props => {
       </ul>
     </section>
   );
+};
+Statistics.propTypes = {
+  stats: PropTypes.array.isRequired,
+  title: PropTypes.string,
 };

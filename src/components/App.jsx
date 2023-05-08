@@ -7,8 +7,10 @@ import { Friends } from './FriendList/FriendList';
 import user from '../data/user.json';
 import statistics from '../data/statistics.json';
 import friendsList from '../data/friends.json';
+import transactions from '../data/transactions.json';
 
 import s from './app.module.css';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
@@ -26,7 +28,10 @@ export const App = () => {
               path="/task3"
               element={<Friends friendsList={friendsList} />}
             />
-            <Route path="/task4" element="" />
+            <Route
+              path="/task4"
+              element={<TransactionHistory items={transactions} />}
+            />
             <Route path="*" element={<Navigate to="/task1" replace />} />
           </Routes>
         </div>

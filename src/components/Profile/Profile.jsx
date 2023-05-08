@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import s from './profile.module.css';
 
 export default function Profile(props) {
@@ -11,7 +13,7 @@ export default function Profile(props) {
         <p className={s.tag}>{tag}</p>
         <p className={s.location}>{location}</p>
       </div>
-      <ul className={s.stats}>
+      <ul className={s.statistics}>
         {Object.entries(stats).map(entry => {
           return (
             <li key={entry[0]} className={`${s.noLeftBorder} ${s.statsItem}`}>
@@ -24,3 +26,10 @@ export default function Profile(props) {
     </div>
   );
 }
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string,
+  stats: PropTypes.object.isRequired,
+};
